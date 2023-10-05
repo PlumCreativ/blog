@@ -1,14 +1,6 @@
 <?php
 session_start();
-try
-{
-    $db = new PDO('mysql:host=localhost:3306;dbname=blog;charset=utf8', 'root', '');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING); // On émet une alerte à chaque fois qu'une
-}
-catch(Exception $e)
-{
-    die('Erreur : '.$e->getMessage());
-}
+require_once("bd.php");
 ?>
     <html lang="fr">
     <head>

@@ -73,15 +73,7 @@ session_start();
 
             <?php
             // Connexion Ã  la base de donnÃ©es
-            try
-            {
-                $db = new PDO('mysql:host=localhost:3306;dbname=blog;charset=utf8', 'blog', 'blog');
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING); // On Ã©met une alerte Ã  chaque fois qu'une
-            }
-            catch(Exception $e)
-            {
-                die('Erreur : '.$e->getMessage());
-            }
+            require_once("bd.php");
 
             // On rÃ©cupÃ¨re les 5 derniers billets
             $req = $db->query(

@@ -24,15 +24,7 @@
         <div class="col-9">
             <?php
             // Connexion à la base de donnÃ©es
-            try
-            {
-                $db = new PDO('mysql:host=localhost:3306;dbname=blog;charset=utf8', 'blog', 'blog');
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING); // On Ã©met une alerte Ã  chaque fois qu'une
-            }
-            catch(Exception $e)
-            {
-                die('Erreur : '.$e->getMessage());
-            }
+            require_once("bd.php");
 
             // RÃ©cupÃ©ration du billet
             $req = $db->prepare(
