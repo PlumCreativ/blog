@@ -1,6 +1,0 @@
-AuthType Basic
-AuthName "Test fred"
-AuthUserFile "/home/etudiant1/.htpassword"
-Require valid-user
-Options +Indexes +FollowSymLinks
- 
