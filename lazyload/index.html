@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exemple de LazyLoad</title>
+	<!-- Inclure la bibliothèque LazyLoad -->
+	<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Exemple de Lazyload</h1>
+    </header>     
+
+    <div class="container">
+       
+        <br/><br/><br/><br/><br/><br/>
+        <p>fds flmfdlfdk fmdlf sdkfdfsmdlf ksfml fksdmfl ksdfml fksdmf lsdfkm lfkds mflksfdk fldsmmmf mkmsdfl kfdml fksdflm kfk
+        fsdm fkdf kdsf msdfkdmf kfds kmfldsfk fmldf kfdmfmmk lmmsdfml fkf</p>
+        <br><br/><br/>
+
+	<!-- Une image à charger de manière asynchrone avec LazyLoad -->
+	<img src="images/image.jpg" alt="Image" loading="lazy" width="300" height="200">
+	<img data-src="images/image.jpg" alt="Image" width="300" height="200">
+	<!-- Ajouter une classe "lazy" pour que LazyLoad s'applique à cette image -->
+	<script>document.querySelector('img').classList.add('lazy');</script>
+	<!-- Initialiser LazyLoad -->
+	<script>var lazyLoad = new LazyLoad();</script>
+    </div>
+</body>
+</html>
