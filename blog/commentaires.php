@@ -28,13 +28,8 @@
 
             // RÃ©cupÃ©ration du billet
             $req = $db->prepare(
-                'SELECT 
-                                id, 
-                                titre, 
-                                contenu, 
-                                DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr 
-                            FROM billets 
-                            WHERE id = :id'
+                'SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets 
+                WHERE id = :id'
             );
             $req->execute([
                     ':id'=>$_REQUEST['billet']
