@@ -20,27 +20,34 @@ session_start();
         <div class="col-12">
             <nav class="nav justify-content-end">
                 <?php
-                    $isConnect = false;
-                    if( isset( $_SESSION['login'] ) && !$_GET['error'] ) {
-                        $isConnect = true;
-                    }
-                ?>
-                <?php
-                if( $isConnect ) {
-                    $strPhoto = 'images/' . $_SESSION['photo'];
-                ?>
-                <a class="nav-link" href="logout.php">
 
-                    <img src="<?=$strPhoto?>" width="40"/>
-                    Se déconnecter</a>
-                <?php
-                } else {
-                ?>
-                <a class="nav-link" href="login.php">Se connecter</a>
-                <a class="nav-link" href="createUserStep1.php">M'inscrire</a>
-                <?php
-                }
-                ?>
+                    $photo = 'photo';
+                    $isConnect = false;
+                    if( isset( $_SESSION['login'] ) ) {
+                        $isConnect = true;     
+                    
+
+                        if( $isConnect ) {
+                            $strPhoto = 'images/' . $_SESSION[$photo];
+                            if (isset( $_SESSION['photo'] )) {
+                                return $strPhoto;
+
+                                ?>
+                                    <img src="<?=$strPhoto?>" width="40"/>
+                                <?php
+
+                            }
+                        
+                        ?>
+                        <a class="nav-link" href="logout.php">  Se déconnecter </a>
+                        <?php
+                        }
+                    }else {
+                    ?>
+                        <a class="nav-link" href="login.php">Se connecter</a>
+                        <a class="nav-link" href="createUserStep1.php">M'inscrire</a>
+                    <?php 
+                    }?>
         
             </nav>
         </div>
