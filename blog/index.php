@@ -32,7 +32,7 @@ require_once("bd.php");?>
 
                         
                         ?>
-                        <img src="images/<?=$_SESSION['photo']?>" width="40"/>
+                        <img src="images/<? echo($_SESSION['photo'])?>" width="40"/>
                         <a class="nav-link" href="logout.php">  Se déconnecter </a>
                         <?php
                         }

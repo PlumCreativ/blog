@@ -94,7 +94,10 @@ $isInsertOk = $req->execute([
                 </div>
                 <div class="mb-3 row justify-content-end">
                     <div class="col-sm-4">
-                        <button type="submit" class="btn btn-primary mb-3">Valider</button>
+
+                        <a href="index.php">
+                            <button type="submit" class="btn btn-primary mb-3">Valider</button>
+                        </a>
 
 
                         <a href="index.php" class="btn btn-secondary">Ignorer la photo de profil >></a>
