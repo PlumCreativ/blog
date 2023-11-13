@@ -75,13 +75,11 @@ $isInsertOk = $req->execute([
      $_SESSION['login'] = $login;
    //  echo $_SESSION['id'];
  }
-
-
 ?>
-
 
 <section class="container mt-5">
     <div class="row">
+
         <div class="col-12">
             <form name="accesform" method="post" action="validUser.php" enctype="multipart/form-data">
                 <input type="hidden" value="<?=$idUser?>" name="idUser">
@@ -97,6 +95,8 @@ $isInsertOk = $req->execute([
                 <div class="mb-3 row justify-content-end">
                     <div class="col-sm-4">
                         <button type="submit" class="btn btn-primary mb-3">Valider</button>
+
+
                         <a href="index.php" class="btn btn-secondary">Ignorer la photo de profil >></a>
                     </div>
                 </div>

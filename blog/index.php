@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
 session_start();
-?>
+// Connexion Ã  la base de donnÃ©es
+require_once("bd.php");?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -21,24 +22,17 @@ session_start();
             <nav class="nav justify-content-end">
                 <?php
 
-                    $photo = 'photo';
                     $isConnect = false;
+                    $errorMessage = '';
                     if( isset( $_SESSION['login'] ) ) {
                         $isConnect = true;     
-                    
 
                         if( $isConnect ) {
-                            $strPhoto = 'images/' . $_SESSION[$photo];
-                            if (isset( $_SESSION['photo'] )) {
-                                return $strPhoto;
+                            //$strPhoto = 'images/' . $_SESSION['photo'];
 
-                                ?>
-                                    <img src="<?=$strPhoto?>" width="40"/>
-                                <?php
-
-                            }
                         
                         ?>
+                        <img src="images/<?=$_SESSION['photo']?>" width="40"/>
                         <a class="nav-link" href="logout.php">  Se déconnecter </a>
                         <?php
                         }
@@ -79,8 +73,7 @@ session_start();
         <div class="col-9">
 
             <?php
-            // Connexion Ã  la base de donnÃ©es
-            require_once("bd.php");
+
 
             // On rÃ©cupÃ¨re les 5 derniers billets
             $req = $db->query(
